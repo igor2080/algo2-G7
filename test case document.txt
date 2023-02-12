@@ -17,9 +17,8 @@ Assumptions:
 
 linked list:
 	1)
-	constructor: array of 3 values: 1,2,3
-	push_back: 10
-		program inserts 10 as a new node
+	user input: 4
+	1 2 3 10
 	printList:
 		output: 1->2->3->10
 	removeAllLargerThanPrevious:
@@ -28,9 +27,8 @@ linked list:
 		output: 1
 	*************************************
 	2)
-	constructor: 1
-	push_back: NULL
-		program inserts 0 as a new node
+	user input: 2
+	1 NULL
 	printList:
 		output: 1->0
 	removeAllLargerThanPrevious:
@@ -39,15 +37,12 @@ linked list:
 		output: 1->0
 	*************************************
 	3)
-	printList: NULL
-		output: 
-	removeAllLargerThanPrevious: NULL
-		nothing happens
+	user input: 0
+	output: program will ask for input again
 	*************************************
 	4)
-	constructor: array of 3 values: -1,-2,-3
-	push_back: -10
-		program inserts -10 as a new node
+	user input: 4
+	-1 -2 -3 -10
 	printList:
 		output: -1->-2->-3->-10
 	removeAllLargerThanPrevious:
@@ -56,8 +51,8 @@ linked list:
 		output: -1->-2->-3->-10
 	*************************************
 	5)
-	constructor: array of 3 values 4,7,3
-	push_back: 4
+	user input: 4
+	4 7 3 4
 	printList:
 		output:4->7->3->4
 	removeAllLargerThanPrevious:
@@ -67,9 +62,8 @@ linked list:
 	
 2)STL::list
 	1)
-	list initialized with: 1,2,3
-	push_back: 10
-		insert 10 at the end of the list
+	user input: 4
+	1 2 3 10
 	printList:
 		output: 1->2->3->10
 	removeAllLargerThanPrevious:
@@ -78,9 +72,8 @@ linked list:
 		output: 1
 	*************************************
 	2)
-	list initialized with: 1
-	push_back: NULL
-		program inserts 0 at the end of the list
+	user input: 2
+	1 NULL
 	printList:
 		output: 1->0
 	removeAllLargerThanPrevious:
@@ -89,15 +82,12 @@ linked list:
 		output: 1->0
 	*************************************
 	3)
-	printList: an empty list(list with 0 elements)
-		no output happens
-	removeAllLargerThanPrevious: an empty list(list with 0 elements)
-		nothing happens
+	user input: 0
+	output: program will ask for input again
 	*************************************
 	4)
-	list initialized with: -1,-2,-3
-	push_back: -10
-		program inserts -10 at the end of the list
+	user input: 4
+	-1 -2 -3 -10
 	printList:
 		output: -1->-2->-3->-10
 	removeAllLargerThanPrevious:
@@ -106,8 +96,8 @@ linked list:
 		output: -1->-2->-3->-10
 	*************************************
 	5)
-	list initialized with: 4,7,3
-	push_back: 4
+	user input: 4
+	4 7 3 4
 	printList:
 		output:4->7->3->4
 	removeAllLargerThanPrevious:

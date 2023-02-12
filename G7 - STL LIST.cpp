@@ -60,8 +60,28 @@ void removeAllLargerThanPrevious(list<int>& list)
 
 int main()
 {
-	list<int> list{ 4,7,3 };
-	list.push_back(4);
+	int inputCount = -1;
+
+	while (inputCount < 1)
+	{
+		cout << "Enter input count(greater than 0): ";
+		cin >> inputCount;
+	}
+
+	int input;
+
+	cout << "Enter input #1: ";
+	cin >> input;
+
+	list<int> list{ input };
+
+	for (int i = 2; i <= inputCount; i++)
+	{
+		cout << "Enter input #" << i << ": ";
+		cin >> input;
+		list.push_back(input);
+	}
+
 	printList(list);
 	removeAllLargerThanPrevious(list);
 	printList(list);
