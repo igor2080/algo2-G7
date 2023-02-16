@@ -68,38 +68,39 @@ void Node::push_back(int value)
 	current->next = new_node;
 }
 
-void removeAllLargerThanPrevious(Node* list)
+Node* removeAllLargerThanPrevious(Node* list)
 {
 	if (!list)//empty/null list passed
-		return;
+		return list;
 
 	Node* current = list;
-	Node* extractedNode;
-	//go over each node
-	while (current->next != NULL)
+	Node* newList = new Node(list->value);//start a new list which will contain only the remaining elements
+	Node* previous = current;
+	current = current->next;
+	//go over each node, starting from second
+	while (current != NULL)
 	{
-		//if the next node is larger, delete it
-		if (current->value < current->next->value) {
-			extractedNode = current->next;
-			//switch references to the node following the one we're about to delete
-			current->next = current->next->next;
-			//remove references from the deleted node
-			extractedNode->next = NULL;
-			//actually delete it
-			delete extractedNode;
-			extractedNode = NULL;
-		}//only if it is not larger, advance to the next node
+		//if the previous node is smaller, do nothing
+		if (previous->value < current->value) {
+
+		}//if the previous node is larger, keep it in
 		else {
-			current = current->next;
+			//current = current->next;
+			newList->push_back(current->value);
 		}
+
+		current = current->next;
+		previous = previous->next;
 	}
+
+	return newList;
 }
 
 int main()
 {
 	int inputCount = -1;
 
-	while (inputCount<1)
+	while (inputCount < 1)
 	{
 		cout << "Enter input count(greater than 0): ";
 		cin >> inputCount;
@@ -119,7 +120,7 @@ int main()
 	}
 
 	printList(list);
-	removeAllLargerThanPrevious(list);
+	list = removeAllLargerThanPrevious(list);
 	printList(list);
 	return 0;
 }

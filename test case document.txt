@@ -54,12 +54,21 @@ linked list:
 	user input: 4
 	4 7 3 4
 	printList:
-		output:4->7->3->4
+		output: 4->7->3->4
 	removeAllLargerThanPrevious:
 		deleted nodes: 7,4(the last node)
 	printList:
 		output: 4->3
-	
+	*************************************
+	6)
+	user input: 9
+	1 2 3 4 3 2 1 7 7
+	printList:
+		output: 1->2->3->4->3->2->1->7->7
+	removeAllLargerThanPrevious:
+		deleted nodes: 2,3,4,7(the first one)
+	printList:
+		output: 1->3->2->1->7
 2)STL::list
 	1)
 	user input: 4
@@ -99,8 +108,18 @@ linked list:
 	user input: 4
 	4 7 3 4
 	printList:
-		output:4->7->3->4
+		output: 4->7->3->4
 	removeAllLargerThanPrevious:
 		elements removed from the list: 7,4(the last node)
 	printList:
 		output: 4->3
+	*************************************
+	6)
+	user input: 9
+	1 2 3 4 3 2 1 7 7
+	printList:
+		output: 1->2->3->4->3->2->1->7->7
+	removeAllLargerThanPrevious:
+		elements removed from the list: 2,3,4,7(the first one)
+	printList:
+		output: 1->3->2->1->7

@@ -29,33 +29,34 @@ void printList(list<int>& list)
 	cout << endl;
 }
 
-void removeAllLargerThanPrevious(list<int>& list)
+list<int> removeAllLargerThanPrevious(list<int>& itemList)
 {
 	//no need to modify empty or lists of one element
-	if (list.empty() || list.size() < 2)
-		return;
+	if (itemList.empty() || itemList.size() < 2)
+		return itemList;
 
-	auto item = list.begin();
-	auto adjacent = list.begin();
+	auto item = itemList.begin();
+	auto adjacent = itemList.begin();
+	list<int> newList{ *item };//start a new list which will contain only the remaining elements
 	//adjacent will be used for checking for 'larger than previous'
 	++adjacent;
 
-	while (adjacent != list.end())
+	while (adjacent != itemList.end())
 	{
 
 		if (*item < *adjacent)
-		{//if the next item is larger, replace it with the next one
-
-			adjacent = list.erase(adjacent);
+		{//if the next item is smaller, do nothing
 
 		}
-		else//only if it is not larger, advance both iterators to the next items
-		{
-			item++;
-			adjacent++;
+		else {//if the previous item is larger, add to new list
+			newList.push_back(*adjacent);
 		}
+
+		adjacent++;
+		item++;
 	}
 
+	return newList;
 }
 
 int main()
@@ -83,7 +84,7 @@ int main()
 	}
 
 	printList(list);
-	removeAllLargerThanPrevious(list);
+	list = removeAllLargerThanPrevious(list);
 	printList(list);
 	return 0;
 }
