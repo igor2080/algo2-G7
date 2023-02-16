@@ -277,3 +277,4 @@ MrcUtils.mak
 launchSettings.json
 *.binlog
 *.bak
+/G7.zip
